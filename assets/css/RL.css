@@ -1,0 +1,204 @@
+/* =========================================
+   1. CORE RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* Dark Navy Background */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* =========================================
+   2. SHARED COMPONENTS (Glassmorphism)
+   ========================================= */
+.container {
+    background: rgba(26, 77, 46, 0.7); /* Brand Green with Transparency */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+    color: #eab308; /* Brand Gold */
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+/* Form Layouts */
+form {
+    display: grid;
+    gap: 20px;
+}
+
+/* Input Styling */
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #e2e8f0;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input {
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+input:focus {
+    border-color: #eab308;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 10px rgba(234, 179, 8, 0.2);
+}
+
+/* Button Styling */
+button {
+    padding: 16px;
+    background: #eab308;
+    color: #1a4d2e;
+    font-weight: 700;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #FFC655;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 179, 8, 0.4);
+}
+
+/* Links & Redirects */
+.login-link, .options-row {
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.login-link a, .forgot-link {
+    color: #eab308;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover, .forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   3. PAGE-SPECIFIC OVERRIDES
+   ========================================= */
+
+/* Register Page: Two-column grid */
+.register-container {
+    max-width: 750px;
+}
+
+.register-form {
+    grid-template-columns: 1fr 1fr;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* Login Page: Narrow centered layout */
+.login-container {
+    max-width: 400px;
+}
+
+.login-form {
+    grid-template-columns: 1fr; /* Stay single column */
+}
+
+.options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+    accent-color: #eab308;
+}
+
+/* =========================================
+   4. RESPONSIVENESS
+   ========================================= */
+@media (max-width: 600px) {
+    .register-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .full-width, .register-form button, .login-link {
+        grid-column: span 1;
+    }
+    
+    .container {
+        padding: 25px;
+        width: 95%;
+    }
+}
+.login-container {
+    max-width: 480px;
+    width: 90%; 
+    padding: 60px 50px; 
+    border-radius: 35px; 
+    overflow: hidden;
+    background: rgba(26, 77, 46, 0.8); 
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6); 
+}
+.login-container h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

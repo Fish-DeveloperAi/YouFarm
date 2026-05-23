@@ -1,0 +1,219 @@
+:root {
+    --color-primary: #1a4d2e; /* Dark Green */
+    --color-accent: #eab308;  /* Gold */
+    --color-bg: #0f172a;      /* Dark Slate */
+    --color-text-light: #ffffff;
+    --color-text-dim: #94a3b8;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem; 
+}
+/* --- Navigation (Consistent) --- */
+header {
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo { 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+.logo-icon {
+    color: white;
+}
+
+.nav-links { 
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+.nav-links a {
+    color: var(--color-text-dim);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+.nav-links a:hover, .nav-links a.active {
+    color: var(--color-accent);
+}
+
+.btn-signin {
+    background: var(--color-primary);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+
+/* --- Hero Section --- */
+.about-hero {
+    text-align: center;
+    padding: 2rem 1rem 3rem;
+    background: radial-gradient(circle at center, rgba(26, 77, 46, 0.4) 0%, transparent 70%);
+}
+
+.about-hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    color: var(--color-accent);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    color: var(--color-text-dim);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Story Section --- */
+.story-section {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.story-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.story-content h2 {
+    font-family: var(--font-serif);
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    color: var(--color-text-dim);
+}
+
+/* --- Team Grid --- */
+.team-section {
+    padding-bottom: 6rem;
+    text-align: center;
+}
+
+.team-section h2 {
+    font-family: var(--font-serif);
+    color: var(--color-accent);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- Team Cards (Glass Effect) --- */
+.team-card {
+    background: rgba(255, 255, 255, 0.03); /* Glass background */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    transition: transform 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-accent);
+    background: rgba(26, 77, 46, 0.3); /* Green tint on hover */
+}
+
+.avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    border: 2px solid var(--color-accent);
+}
+
+.team-card h3 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.role {
+    display: block;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-dim);
+    line-height: 1.6;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    color: var(--color-text-dim);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-hero h1 { font-size: 2.5rem; }
+}
